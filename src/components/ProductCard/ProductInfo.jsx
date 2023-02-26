@@ -1,34 +1,34 @@
 import React from 'react';
 import productImg from '../../assets/product-img.png';
 
-export default function ProductInfo() {
+export default function ProductInfo({ product, discountPrice }) {
   return (
     <>
       <div className="h-[183px] overflow-hidden">
         <img
           src={productImg}
-          alt="래피젠 코로나 자가 검사 키트"
+          alt={product.name}
           className="object-cover w-full h-full "
         />
       </div>
       <h1 className="mt-4 text-lg font-bold leading-6">
-        래피젠 코로나 자가 검사 키트
+        {product.name}
         <br />
-        2개입X1박스
+        {product.amount}
       </h1>
       <div className="flex items-center justify-between py-4 border-b border-Gray-200">
         <span aria-label="할인율" className="text-lg font-bold text-secondary">
-          88%
+          {Math.floor(product.discount)}%
         </span>
         <p className="flex items-center font-bold ">
           <span
             aria-label="정상가"
             className="mr-[0.375rem] text-Gray-300 line-through"
           >
-            56,760원
+            {product.regularPrice.toLocaleString()}원
           </span>
           <span aria-label="판매가" className="text-[1.375rem]  font-normal">
-            6,370원
+            {discountPrice}원
           </span>
         </p>
       </div>

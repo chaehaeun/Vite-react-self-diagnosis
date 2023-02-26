@@ -3,7 +3,7 @@ import PurchaseBtn from '../UI/Button/PurchaseBtn';
 import ProductCount from './ProductCount';
 import ProductTotalPrice from './ProductTotalPrice';
 
-export default function ProductAmount() {
+export default function ProductAmount({ discountPrice }) {
   const [amount, setAmount] = useState(1);
 
   const plusAmount = () => {
@@ -20,7 +20,7 @@ export default function ProductAmount() {
   return (
     <>
       <ProductCount amount={amount} plus={plusAmount} minus={minusAmount} />
-      <ProductTotalPrice amount={amount} price={6370} />
+      <ProductTotalPrice amount={amount} price={discountPrice} />
       <PurchaseBtn amount={amount} />
     </>
   );

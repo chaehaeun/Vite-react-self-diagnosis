@@ -38,6 +38,7 @@ export default function HelpMessage() {
         </p>
         <svg
           role="button"
+          aria-label="도움말 닫기 버튼"
           className="ml-4 cursor-pointer"
           width="12"
           height="12"

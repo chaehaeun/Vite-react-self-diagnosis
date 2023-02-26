@@ -2,6 +2,7 @@ import React from 'react';
 import HelpMessage from '../UI/Button/HelpMessage';
 
 export default function ProductTotalPrice({ amount, price }) {
+  console.log(price);
   return (
     <div className="flex justify-between py-4">
       <div className="flex items-center">
@@ -13,7 +14,7 @@ export default function ProductTotalPrice({ amount, price }) {
           총 수량 {amount}개
         </span>
         <span className="text-[1.375rem] font-bold text-secondary">
-          {(amount * price).toLocaleString()}원
+          {(price * amount).toLocaleString()}원
         </span>
       </div>
     </div>
